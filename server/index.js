@@ -1,6 +1,6 @@
 const express = require("express")
 const app = express();
-const { syncAndSeed } = require('./db')
+const { syncAndSeed } = require('./db/seed')
 const morgan = require('morgan')
 const path = require('path')
 
