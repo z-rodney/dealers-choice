@@ -1,3 +1,37 @@
+body, h1 {
+  margin: 0;
+}
+
 body {
   box-sizing: border-box;
+}
+
+header {
+  color: #204E4A;
+  background: #A0D076;
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1rem;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.single-plant {
+  background: #E9F5E0;
+  flex-basis: 35%;
+  flex-grow: 0;
+  border: solid 1px #204E4A;
+  border-radius: 25px;
+  margin: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.plant-img {
+  height: 24rem;
+  width: 20rem;
 }

@@ -20,6 +20,14 @@ const plants = [
   imgUrl: 'https://www.easternleaf.com/v/vspfiles/photos/808380-03-2.jpg?v-cache=1556729985'}
 ]
 
+const details = [
+  {
+    description: '',
+    wateringFrequency: '',
+    light: '',
+  }
+]
+
 const syncAndSeed = async () => {
   await db.sync({force: true});
   Promise.all([
