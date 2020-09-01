@@ -1,6 +1,8 @@
 const Sequelize = require("sequelize")
 const dbUrl = process.env.DATABASE_URL || 'postgres://localhost/starter-plants'
-const db = new Sequelize(dbUrl)
+const db = new Sequelize(dbUrl, {
+  logging: false
+})
 const {STRING, TEXT} = Sequelize
 
 const Plant = db.define('plant', {
@@ -13,7 +15,6 @@ const Plant = db.define('plant', {
 
 const Detail = db.define('detail', {
   description: TEXT,
-  size: STRING,
   wateringFrequency: STRING,
   light: STRING
 })

@@ -1,4 +1,4 @@
-const { db, Plant, Detail } = require('./db/index')
+const { db, Plant, Detail } = require('./index')
 
 const plants = [
   {name: 'Aloe Vera',
@@ -19,16 +19,42 @@ const plants = [
 
 const details = [
   {
-    description: '',
-    wateringFrequency: '',
-    light: '',
+    description: 'An easy, attractive succulent that makes for a great indoor companion. The sap from aloe vera plants is used as a skin moisturizer and to heal minor cuts and ease sunburn.',
+    wateringFrequency: 'About once a week in warmer months and about once every two weeks in winter.',
+    light: 'Bright, indirect sunlight',
+    plantId: 1
+  },
+  {
+    description: 'Jade plants have thick, woody stems and oval-shaped leaves. They live for a very long time, often being passed down from generation to generation and reaching heights of three feet or more when grown indoors.',
+    wateringFrequency: 'Varies. Water it deeply, then wait until the soil has mostly dried out before you water it again.',
+    light: 'At least 4 hours of direct sunlight each day',
+    plantId: 2
+  },
+  {
+    description: 'Also called Devil\'s Ivy. Its vining nature makes it a great choice for use in hanging baskets, draped across shelves, or climbing up a wall. According to a study by NASA, pothos is one of the best air-purifying houseplants.',
+    wateringFrequency: 'Only water when the soil feels dry.',
+    light: 'Bright, indirect light',
+    plantId: 3
+  },
+  {
+    description: 'Also known as “Mother-in-Law’s Tongue”, snake plants are native to southern Africa. This succulent plant is very forgiving and perfect for beginners.',
+    wateringFrequency: 'Do not water too frequently. Let the soil mostly dry out between waterings.',
+    light: 'Bright, indirect light, but can tolerate some direct sunlight',
+    plantId: 4
+  },
+  {
+    description: 'Zamioculcas zamiifolia, affectionately called the ZZ plant or Zanzibar Gem, is a tropical plant. The ZZ Plant is characterized by its thick waxy green leaves and is a great air purifying option.',
+    wateringFrequency: 'Allow the soil to become dry at the top to the touch between watering and do not over water.',
+    light: 'Medium to low indirect light, avoid direct sunlight',
+    plantId: 5
   }
 ]
 
 const syncAndSeed = async () => {
   await db.sync({force: true});
   Promise.all([
-    Plant.bulkCreate(plants)
+    Plant.bulkCreate(plants),
+    Detail.bulkCreate(details)
   ])
 }
 

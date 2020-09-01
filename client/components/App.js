@@ -1,7 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import axios from "axios"
-//import any sub-components
 
 export default class App extends React.Component {
 	constructor(){
@@ -15,10 +14,11 @@ export default class App extends React.Component {
 	async componentDidMount(){
 		const plants = (await axios.get('/api/plants')).data
 		this.setState({ plants })
+
+		window.addEventListener('hashchange', () => {
+			console.log(window.location.hash)
+		})
 	}
-	//any lifecycle methods
-	//any custom methods
-	//render
 
 	render(){
 		return (

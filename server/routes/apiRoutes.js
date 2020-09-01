@@ -1,10 +1,19 @@
 const router = require("express").Router()
-const { db, Plant, Detail } = require('../db')
+const { Plant, Detail } = require('../db')
 
 router.get('/plants', async (req, res, next) => {
   try {
     const plants = await Plant.findAll();
     res.send(plants)
+  } catch(err) {
+    next(err)
+  }
+})
+
+router.get('/details', async (req, res, next) => {
+  try {
+    const details = await Detail.findAll();
+    res.send(details)
   } catch(err) {
     next(err)
   }
