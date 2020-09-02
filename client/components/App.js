@@ -48,9 +48,9 @@ export default class App extends React.Component {
 						</div>
 						<img className="selected-img" src={this.state.selectedPlant.imgUrl} alt={`A picture of a ${this.state.selectedPlant.name}`}></img>
 						<div>
-							<p><span className="plant-info">About this plant:</span> {this.state.selectedPlant.detail.description}</p>
-							<p><span className="plant-info">Ideal lighting:</span> {this.state.selectedPlant.detail.light}</p>
-							<p><span className="plant-info">When to water:</span> {this.state.selectedPlant.detail.wateringFrequency}</p>
+							<p><span className="plant-info"><span className="icon">ℹ️</span> About this plant:</span> {this.state.selectedPlant.detail.description}</p>
+							<p><span className="plant-info"><span className="icon">☀️</span> Ideal lighting:</span> {this.state.selectedPlant.detail.light}</p>
+							<p><span className="plant-info"><span className="icon">💧</span> When to water:</span> {this.state.selectedPlant.detail.wateringFrequency}</p>
 						</div>
 					</div>
 				) :
