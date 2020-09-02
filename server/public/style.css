@@ -6,12 +6,19 @@ body {
   box-sizing: border-box;
 }
 
+
 header {
   color: #204E4A;
   background: #A0D076;
   padding: 1rem;
 }
 
+a, a:hover, a:active, a:visited {
+  text-decoration: none;
+  color: black
+}
+
+/* -- PLANT LIST VIEW --*/
 .container {
   display: flex;
   flex-flow: row wrap;
@@ -35,3 +42,21 @@ header {
   height: 24rem;
   width: 20rem;
 }
+
+/* -- PLANT DETAIL VIEW -- */
+
+.selected-plant-view {
+  width: 50%;
+  background: #E9F5E0;
+  padding: 2rem;
+  border-radius: 25px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.selected-img {
+  height: 550px;
+  width: 450px;
+  align-self: center;
+}
+
